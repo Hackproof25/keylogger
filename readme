@@ -1,0 +1,42 @@
+# Keylogger Script
+
+This Python script implements a basic keylogger that captures keystrokes and saves them to a log file. It also includes functionality to send the log file to a Discord channel via a webhook.
+
+## Installation
+
+1. Clone the repository:
+    git clone https://github.com/yourusername/your-keylogger-repo.git
+
+2. Install the required Python packages:
+    pip install pynput requests
+
+## Usage
+
+1.  Open the 'keylogger.py' file in your preferred code editor.
+2.  Configure the Discord webhook URL ('DISCORD_WEBHOOK_URL') before use.
+3.  Run the script:
+4.  Bash
+        python keylogger.py
+5.  The keylogger will start capturing keystrokes. Press 'Esc' to stop the keylogger.
+
+## Configuration
+-- Modify the DISCORD_WEBHOOK_URL variable in the script to your Discord webhook URL.
+-- The log files will be saved in the logs directory created by the script.
+
+## Explanation
+-- The script works by initializing a listener to capture keystrokes using the pynput.keyboard library. When a key is pressed, it appends the keystroke to the keystrokes list. Pressing 'Esc' stops the keylogger, saves the keystrokes to a log file, and sends the file to Discord via webhook if configured.
+
+## Components
+-- Imports: Necessary modules such as datetime, os, requests, and Listener from pynput.keyboard are imported.
+-- Keylogger Logic: Functions like on_press and on_release handle keystroke capturing and file writing.
+-- File Writing: The write_to_file function generates log files based on timestamps.
+-- Webhook Sending: The send_discord_webhook function sends log files to Discord using a webhook.
+-- Main Execution: The script starts the keylogger and provides console output for debugging.
+-- Contributing
+-- Feel free to contribute to this project by forking the repository and submitting pull requests.
+
+## Contributing
+   Feel free to contribute to this project by forking the repository and submitting pull requests.
+
+## License
+   This project is licensed under the MIT License.

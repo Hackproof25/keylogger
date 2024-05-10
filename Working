@@ -1,0 +1,31 @@
+# Keylogger Explanation
+
+This Python script implements a basic keylogger that captures keystrokes and saves them to a log file. It also includes functionality to send the log file to a Discord channel via a webhook.
+
+## 1. Imports:
+- The script imports necessary modules such as `datetime`, `os`, `requests`, and `Listener` from `pynput.keyboard`.
+
+## 2. Configuration:
+- It defines a Discord webhook URL (`DISCORD_WEBHOOK_URL`) and a directory (`log_directory`) to store log files.
+
+## 3. Keylogger Logic:
+- The script initializes a global variable `keystrokes` to store captured keystrokes.
+- The `on_press` function captures keystrokes and appends them to the `keystrokes` list.
+- The `on_release` function stops the keylogger when the 'Esc' key is pressed, triggering the `write_to_file` function.
+
+## 4. File Writing:
+- The `write_to_file` function generates a unique filename based on the current timestamp and writes the captured keystrokes to a text file in the specified log directory.
+- If writing is successful, it calls the `send_discord_webhook` function to send the log file to Discord.
+
+## 5. Webhook Sending:
+- The `send_discord_webhook` function sends the log file as an attachment to a Discord channel using a webhook.
+- It prepares the file and data for the webhook request and handles the response status to determine success or failure.
+
+## 6. Main Execution:
+- The script starts the keylogger by creating a listener with `Listener(on_press=on_press, on_release=on_release)` and then joining the listener.
+
+## 7. Usage:
+- When run, the script starts capturing keystrokes. Pressing 'Esc' stops the keylogger, saves the keystrokes to a file, and sends the file to Discord if configured.
+
+## 8. Output:
+- During execution, the script provides console output indicating keystrokes captured, file saving status, and webhook response status for debugging purposes.
